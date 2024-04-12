@@ -67,7 +67,7 @@
         </div>
     </div>
     <div class="mx-auto my-4 rounded-md border-4 border-pink-300 bg-slate-100 bg-clip-border p-4">
-        <div class="break-all text-center font-mono text-2xl tracking-widest">
+        <div class="break-all text-center font-mono text-4xl tracking-widest">
             {generatedPassword}
         </div>
     </div>
