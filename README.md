@@ -1,2 +1,2 @@
 # QA-Projects
-First project, just a random passoword generator gi 
+First project, just a random passoword generator 
