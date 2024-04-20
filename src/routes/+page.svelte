@@ -1,9 +1,9 @@
 <script lang="ts">
     let generatedPassword = "Press generate!";
 
-    const letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    const numbers = "1234567890";
-    const symbols = "_.@!#$%^&*(){}[];'?-";
+    const LETTERS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const NUMBERS = "1234567890";
+    const SYMBOLS = "_.@!#$%^&*(){}[];'?-";
 
     let allowNumbers = true;
     let allowSymbols = true;
@@ -11,20 +11,27 @@
 
     function generatePassword() {
         generatedPassword = "";
-        let charList = letters;
+
+        let charList = LETTERS;
+
         if (allowNumbers) {
-            charList += numbers;
+            charList += NUMBERS;
         }
+
         if (allowSymbols) {
-            charList += letters;
-            charList += symbols;
+            charList += LETTERS;
+            charList += SYMBOLS;
         }
+        
         let charListSize = charList.length;
+
         let generatePasswordHelper = "";
+        
         for (let index = 0; index < passwordSize; index++) {
             let randomIndex = randomIntFromInterval(0, charListSize - 1);
             generatePasswordHelper += charList[randomIndex];
         }
+
         generatedPassword = generatePasswordHelper;
     }
 
