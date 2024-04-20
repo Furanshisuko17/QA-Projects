@@ -31,7 +31,7 @@
             let randomIndex = randomIntFromInterval(0, charListSize - 1);
             generatePasswordHelper += charList[randomIndex];
         }
-        console.log(passwordSize);
+
         generatedPassword = generatePasswordHelper;
     }
 
