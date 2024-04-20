@@ -1,2 +1,3 @@
 # QA-Projects
-First project, just a random passoword generator 
+
+Second project, a word, character and sentence counter made with SvelteKit + TailwindCSS
