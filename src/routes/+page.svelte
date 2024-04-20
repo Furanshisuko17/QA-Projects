@@ -22,16 +22,16 @@
             charList += LETTERS;
             charList += SYMBOLS;
         }
-        
+
         let charListSize = charList.length;
 
         let generatePasswordHelper = "";
-        
+
         for (let index = 0; index < passwordSize; index++) {
             let randomIndex = randomIntFromInterval(0, charListSize - 1);
             generatePasswordHelper += charList[randomIndex];
         }
-
+        console.log(passwordSize);
         generatedPassword = generatePasswordHelper;
     }
 
@@ -96,8 +96,8 @@
         >
             <div class=" font-semibold text-slate-950">Length</div>
             <input
-                on:input={generatePassword}
                 bind:value={passwordSize}
+                on:input={generatePassword}
                 type="range"
                 min="8"
                 max="30"
