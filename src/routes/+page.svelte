@@ -1,6 +1,30 @@
 <script lang="ts">
+    let textAreaValue = "";
+    let characters = 0;
+    let words = 0;
+    let sentences = 0;
+    let whitespaces = 0;
 
+    $: {
+        if (textAreaValue.trim() === "" || textAreaValue === null) {
+            words = 0;
+            sentences = 0;
+        } else {
+            words = (textAreaValue.match(/[^\s\n]+/g) || []).length;
+
+            sentences = textAreaValue
+                .trim()
+                .split(/[.!?]+/)
+                .filter((sentence) => sentence.trim().length > 0).length;
+        }
+        whitespaces = (textAreaValue.match(/\s/g) || []).length;
+        characters = textAreaValue.length - whitespaces;
+    }
 </script>
+
+<svelte:head>
+    <title>Word Counter</title>
+</svelte:head>
 
 <main class="container mx-auto w-2/3 font-sans">
     <div class="container mx-auto flex flex-wrap">
@@ -10,7 +34,9 @@
             >
                 <div class="self-start text-6xl">Word Counter</div>
             </div>
-            <div class="text-xl text-start text-slate-900">App for counting words, characters and sentences.</div>
+            <div class="text-start text-xl text-slate-900">
+                App for counting words, characters and sentences.
+            </div>
         </div>
         <div class="flex grow content-center gap-8">
             <div class="self-center text-xl font-bold text-slate-900">
@@ -32,43 +58,45 @@
         </div>
     </div>
     <div class="mx-auto my-4 rounded-md border-4 border-blue-300 bg-slate-100 bg-clip-border">
-        <textarea name="" id="" class="w-full h-full min-h-80 bg-green-50/50"></textarea>
-
+        <textarea
+            bind:value={textAreaValue}
+            name=""
+            id=""
+            class="m-0 box-border h-full min-h-80 w-full resize-none border-0 bg-green-50/50 p-2 align-top text-lg font-semibold outline-0"
+        ></textarea>
     </div>
     <div class="mx-auto flex flex-wrap justify-stretch gap-4">
         <div
-            class="flex min-h-[48px] grow items-center justify-center gap-4 rounded-lg border-2 border-pink-500 bg-slate-50 px-4"
+            class="flex min-h-[48px] grow items-center justify-center gap-4 rounded-lg border-2 border-blue-800 bg-slate-50 px-4"
         >
-            <div class=" font-semibold text-slate-950">Length</div>
-            <input
-               
-                type="range"
-                min="8"
-                max="30"
-                class="slider accent-pink-500"
-                id="myRange"
-            />
-            <div class="min-w-[24px] text-center font-semibold text-slate-950"></div>
+            <div class=" font-bold text-slate-950">Characters:</div>
+            <div class="min-w-[24px] text-center font-bold text-blue-800">
+                {characters.toLocaleString()}
+            </div>
         </div>
         <div
-            class="flex min-h-[48px] grow items-center justify-center gap-4 rounded-lg border-2 border-pink-500 bg-slate-50 px-4"
+            class="flex min-h-[48px] grow items-center justify-center gap-4 rounded-lg border-2 border-sky-700 bg-slate-50 px-4"
         >
-            <div class=" font-semibold text-slate-950">Numbers</div>
-            <input
-               
-                type="checkbox"
-                class="checkbox accent-pink-500"
-            />
+            <div class=" font-bold text-slate-950">Whitespaces:</div>
+            <div class="min-w-[24px] text-center font-bold text-sky-700">
+                {whitespaces.toLocaleString()}
+            </div>
         </div>
         <div
-            class="flex min-h-[48px] grow items-center justify-center gap-4 rounded-lg border-2 border-pink-500 bg-slate-50 px-4"
+            class="flex min-h-[48px] grow items-center justify-center gap-4 rounded-lg border-2 border-green-700 bg-slate-50 px-4"
         >
-            <div class=" font-semibold text-slate-950">Symbols</div>
-            <input
-                
-                type="checkbox"
-                class="checkbox accent-pink-500"
-            />
+            <div class=" font-bold text-slate-950">Words:</div>
+            <div class="min-w-[24px] text-center font-bold text-green-700">
+                {words.toLocaleString()}
+            </div>
+        </div>
+        <div
+            class="flex min-h-[48px] grow items-center justify-center gap-4 rounded-lg border-2 border-lime-600 bg-slate-50 px-4"
+        >
+            <div class=" font-bold text-slate-950">Sentences:</div>
+            <div class="min-w-[24px] text-center font-bold text-lime-600">
+                {sentences.toLocaleString()}
+            </div>
         </div>
     </div>
 </main>
