@@ -11,12 +11,12 @@
             sentences = 0;
         } else {
             words = (textAreaValue.match(/[^\s\n]+/g) || []).length;
-
             sentences = textAreaValue
                 .trim()
                 .split(/[.!?]+/)
                 .filter((sentence) => sentence.trim().length > 0).length;
         }
+
         whitespaces = (textAreaValue.match(/\s/g) || []).length;
         characters = textAreaValue.length - whitespaces;
     }
