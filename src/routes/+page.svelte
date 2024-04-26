@@ -10,11 +10,17 @@
             words = 0;
             sentences = 0;
         } else {
-            words = (textAreaValue.match(/[^\s\n]+/g) || []).length;
-            sentences = textAreaValue
+            let help2 = textAreaValue.match(/\b\p{L}+\b/gu) || [];
+            words = help2.length;
+            console.log(help2);
+            console.log(" ");
+            let helper = textAreaValue
                 .trim()
-                .split(/[.!?]+/)
-                .filter((sentence) => sentence.trim().length > 0).length;
+                .split(/\p{L}[.!?]\s+/gu)
+                .filter((sentence) => sentence.trim().length > 0);
+            console.log(helper);
+            console.log(" ");
+            sentences = helper.length;
         }
 
         whitespaces = (textAreaValue.match(/\s/g) || []).length;
