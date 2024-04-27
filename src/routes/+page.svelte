@@ -1,36 +1,14 @@
 <script lang="ts">
-    let textAreaValue = "";
-    let characters = 0;
-    let words = 0;
-    let sentences = 0;
-    let whitespaces = 0;
+    import TrueFalseResponse from "$lib/TrueFalseResponse.svelte";
 
-    $: {
-        if (textAreaValue.trim() === "" || textAreaValue === null) {
-            words = 0;
-            sentences = 0;
-        } else {
-            let help2 = textAreaValue.match(/\b\p{L}+\b/gu) || [];
-            words = help2.length;
-            console.log(help2);
-            console.log(" ");
-            let helper = textAreaValue
-                .trim()
-                .split(/\p{L}[.!?]\s+/gu)
-                .filter((sentence) => sentence.trim().length > 0);
-            console.log(helper);
-            console.log(" ");
-            sentences = helper.length;
-        }
-
-        whitespaces = (textAreaValue.match(/\s/g) || []).length;
-        characters = textAreaValue.length - whitespaces;
-    }
+    let response: boolean;
 </script>
 
 <svelte:head>
     <title>Word Counter</title>
 </svelte:head>
+
+<TrueFalseResponse question="Is this a word counter?" answer={true}  />
 
 <main class="container mx-auto w-2/3 font-sans">
     <div class="container mx-auto flex flex-wrap">
@@ -65,7 +43,6 @@
     </div>
     <div class="mx-auto my-4 rounded-md border-4 border-blue-300 bg-slate-100 bg-clip-border">
         <textarea
-            bind:value={textAreaValue}
             name=""
             id=""
             class="m-0 box-border h-full min-h-80 w-full resize-none border-0 bg-green-50/50 p-2 align-top text-lg font-semibold outline-0"
@@ -76,33 +53,25 @@
             class="flex min-h-[48px] grow items-center justify-center gap-4 rounded-lg border-2 border-blue-800 bg-slate-50 px-4"
         >
             <div class=" font-bold text-slate-950">Characters:</div>
-            <div class="min-w-[24px] text-center font-bold text-blue-800">
-                {characters.toLocaleString()}
-            </div>
+            <div class="min-w-[24px] text-center font-bold text-blue-800"></div>
         </div>
         <div
             class="flex min-h-[48px] grow items-center justify-center gap-4 rounded-lg border-2 border-sky-700 bg-slate-50 px-4"
         >
             <div class=" font-bold text-slate-950">Whitespaces:</div>
-            <div class="min-w-[24px] text-center font-bold text-sky-700">
-                {whitespaces.toLocaleString()}
-            </div>
+            <div class="min-w-[24px] text-center font-bold text-sky-700"></div>
         </div>
         <div
             class="flex min-h-[48px] grow items-center justify-center gap-4 rounded-lg border-2 border-green-700 bg-slate-50 px-4"
         >
             <div class=" font-bold text-slate-950">Words:</div>
-            <div class="min-w-[24px] text-center font-bold text-green-700">
-                {words.toLocaleString()}
-            </div>
+            <div class="min-w-[24px] text-center font-bold text-green-700"></div>
         </div>
         <div
             class="flex min-h-[48px] grow items-center justify-center gap-4 rounded-lg border-2 border-lime-600 bg-slate-50 px-4"
         >
             <div class=" font-bold text-slate-950">Sentences:</div>
-            <div class="min-w-[24px] text-center font-bold text-lime-600">
-                {sentences.toLocaleString()}
-            </div>
+            <div class="min-w-[24px] text-center font-bold text-lime-600"></div>
         </div>
     </div>
 </main>

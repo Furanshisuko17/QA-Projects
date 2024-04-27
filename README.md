@@ -1,3 +1,3 @@
 # QA-Projects
 
-Second project, a word, character and sentence counter made with SvelteKit + TailwindCSS
+Third project of the QA course. This project is about fetching an Quiz API about Anime and Manga and then create a quiz game with it.
