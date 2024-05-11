@@ -11,10 +11,16 @@
             sentences = 0;
         } else {
             words = (textAreaValue.match(/\b\p{L}+\b/gu) || []).length;
-            sentences = textAreaValue
+            let helper = textAreaValue
                 .trim()
-                .split(/\p{L}[.!?]\s+/gu)
-                .filter((sentence) => sentence.trim().length > 0).length;
+                .split(/\p{L}[.!?][.!?\s]+/gu)
+                .filter(
+                    (sentence) =>
+                        sentence.trim().length > 0 && textAreaValue.trim().indexOf(".") != -1
+                );
+            sentences = helper.length;
+            console.log(helper);
+            console.log("");
         }
 
         whitespaces = (textAreaValue.match(/\s/g) || []).length;
