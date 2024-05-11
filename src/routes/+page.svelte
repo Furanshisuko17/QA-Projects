@@ -10,17 +10,11 @@
             words = 0;
             sentences = 0;
         } else {
-            let help2 = textAreaValue.match(/\b\p{L}+\b/gu) || [];
-            words = help2.length;
-            console.log(help2);
-            console.log(" ");
-            let helper = textAreaValue
+            words = (textAreaValue.match(/\b\p{L}+\b/gu) || []).length;
+            sentences = textAreaValue
                 .trim()
                 .split(/\p{L}[.!?]\s+/gu)
-                .filter((sentence) => sentence.trim().length > 0);
-            console.log(helper);
-            console.log(" ");
-            sentences = helper.length;
+                .filter((sentence) => sentence.trim().length > 0).length;
         }
 
         whitespaces = (textAreaValue.match(/\s/g) || []).length;
