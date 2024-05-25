@@ -1,5 +1,8 @@
 <script>
-  import '../app.css';
+    import "../app.css";
 </script>
 
-<slot />
+<main class=" h-screen w-full bg-slate-900 font-sans">
+    <slot />
+   
+</main>

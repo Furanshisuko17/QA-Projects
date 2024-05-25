@@ -5,73 +5,59 @@
 </script>
 
 <svelte:head>
-    <title>Word Counter</title>
+    <title>Anime quizz</title>
 </svelte:head>
-
-<TrueFalseResponse question="Is this a word counter?" answer={true}  />
-
-<main class="container mx-auto w-2/3 font-sans">
-    <div class="container mx-auto flex flex-wrap">
-        <div class="my-4 grow text-center font-black">
-            <div
-                class="mx-auto flex animate-movingbg flex-col bg-gradient-to-r from-green-500 via-blue-500 to-green-500 bg-[length:200%_auto] bg-clip-text align-middle text-transparent"
+<div class="container mx-auto flex flex-wrap">
+    <div class="my-4 grow text-center font-black">
+        <div
+            class="mx-auto flex animate-movingbg flex-col bg-gradient-to-r from-violet-900 via-blue-700 to-violet-900 bg-[length:200%_auto] bg-clip-text align-middle text-transparent"
+        >
+            <div class="self-start pb-5 text-6xl">Anime quizz</div>
+        </div>
+        <div class="text-start text-xl text-slate-100">
+            Anime quizz game, it asks anime related questions... Enjoy!
+        </div>
+    </div>
+    <div class="flex grow content-center gap-8">
+        <div class="self-center text-xl font-bold text-slate-900">
+            Created by <a
+                href="https://github.com/Furanshisuko17"
+                class="text-violet-500 underline hover:text-violet-600"
             >
-                <div class="self-start text-6xl">Word Counter</div>
-            </div>
-            <div class="text-start text-xl text-slate-900">
-                App for counting words, characters and sentences.
-            </div>
+                Francisco
+            </a>
         </div>
-        <div class="flex grow content-center gap-8">
-            <div class="self-center text-xl font-bold text-slate-900">
-                Created by <a
-                    href="https://github.com/Furanshisuko17"
-                    class="text-green-500 underline hover:text-green-600"
-                >
-                    Francisco
-                </a>
+        <div class="self-center text-xl font-semibold">
+            <a
+                href="https://github.com/Furanshisuko17/QA-Projects/tree/project_three"
+                class=" text-slate-100 underline hover:text-slate-200"
+            >
+                Github
+            </a>
+        </div>
+    </div>
+    <div class="container mx-auto flex p-4">
+        <div class="flex flex-grow flex-col items-center justify-center gap-4">
+            <img class="h-[400px] w-[400px]" src="" alt="" />
+        </div>
+        <div class="flex flex-grow flex-col gap-4">
+            <div class="flex flex-col">
+                <h2 class="mb-2 text-4xl font-bold text-slate-100">How to play</h2>
+                <ul class="list-inside list-decimal text-slate-100">
+                    <li>There exists two types of questions: True/False and Multiple Choices</li>
+                    <li>There is no time limit.</li>
+                    <li>You can not skip any questions.</li>
+                    <li>The puntuation will be shown at the end of the game.</li>
+                </ul>
             </div>
-            <div class="self-center text-xl font-semibold">
+            <div class="m-auto flex">
                 <a
-                    href="https://github.com/Furanshisuko17/QA-Projects/tree/project_two"
-                    class=" text-slate-700 underline hover:text-slate-800"
+                    href="/play"
+                    class="rounded border-2 border-purple-700 bg-indigo-900 px-5 py-2 text-center text-3xl font-bold text-gray-100"
                 >
-                    Github
+                    Play
                 </a>
             </div>
         </div>
     </div>
-    <div class="mx-auto my-4 rounded-md border-4 border-blue-300 bg-slate-100 bg-clip-border">
-        <textarea
-            name=""
-            id=""
-            class="m-0 box-border h-full min-h-80 w-full resize-none border-0 bg-green-50/50 p-2 align-top text-lg font-semibold outline-0"
-        ></textarea>
-    </div>
-    <div class="mx-auto flex flex-wrap justify-stretch gap-4">
-        <div
-            class="flex min-h-[48px] grow items-center justify-center gap-4 rounded-lg border-2 border-blue-800 bg-slate-50 px-4"
-        >
-            <div class=" font-bold text-slate-950">Characters:</div>
-            <div class="min-w-[24px] text-center font-bold text-blue-800"></div>
-        </div>
-        <div
-            class="flex min-h-[48px] grow items-center justify-center gap-4 rounded-lg border-2 border-sky-700 bg-slate-50 px-4"
-        >
-            <div class=" font-bold text-slate-950">Whitespaces:</div>
-            <div class="min-w-[24px] text-center font-bold text-sky-700"></div>
-        </div>
-        <div
-            class="flex min-h-[48px] grow items-center justify-center gap-4 rounded-lg border-2 border-green-700 bg-slate-50 px-4"
-        >
-            <div class=" font-bold text-slate-950">Words:</div>
-            <div class="min-w-[24px] text-center font-bold text-green-700"></div>
-        </div>
-        <div
-            class="flex min-h-[48px] grow items-center justify-center gap-4 rounded-lg border-2 border-lime-600 bg-slate-50 px-4"
-        >
-            <div class=" font-bold text-slate-950">Sentences:</div>
-            <div class="min-w-[24px] text-center font-bold text-lime-600"></div>
-        </div>
-    </div>
-</main>
+</div>
