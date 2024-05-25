@@ -11,18 +11,10 @@
             sentences = 0;
         } else {
             words = (textAreaValue.match(/\b\p{L}+\b/gu) || []).length;
-            if (
-                textAreaValue.trim().indexOf(".") != -1 ||
-                textAreaValue.trim().indexOf("!") != -1 ||
-                textAreaValue.trim().indexOf("?") != -1
-            ) {
-                sentences = textAreaValue
-                    .trim()
-                    .split(/\p{L}[.!?][.!?\s]+/gu)
-                    .filter((sentence) => sentence.trim().length > 0).length;
-            } else {
-                sentences = 0;
-            }
+            sentences = textAreaValue
+                .trim()
+                .split(/\p{L}[.!?][.!?\s]+/gu)
+                .filter((sentence) => sentence.trim().length > 0).length;
         }
 
         whitespaces = (textAreaValue.match(/\s/g) || []).length;
