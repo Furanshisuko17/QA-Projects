@@ -1,0 +1,39 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model notes {
+  id          BigInt    @id @default(autoincrement())
+  title       String?   @db.TinyText
+  description String?   @db.Text
+  created_at  DateTime? @db.Timestamp(0)
+  color       String?   @db.TinyText
+  user        String?   @db.VarChar(50)
+  users       users?    @relation(fields: [user], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_notes_users")
+
+  @@index([user], map: "fk_notes_users")
+}
+
+model users {
+  id         String     @id @db.VarChar(50)
+  username   String?    @unique(map: "unq_users_username") @db.VarChar(100)
+  created_at DateTime?  @default(dbgenerated("(now())")) @db.Timestamp(0)
+  notes      notes[]
+  sessions   sessions[]
+}
+
+model sessions {
+  id         String    @id @db.VarChar(50) 
+  userId   String?   @db.VarChar(50) @map("user_id")
+  expiresAt  DateTime? @db.Timestamp(0) @map("expires_at")
+  logged_at  DateTime? @db.Timestamp(0) 
+  users      users?    @relation(fields: [userId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_sessions_users")
+
+
+  @@index([userId], map: "fk_sessions_users")
+}
