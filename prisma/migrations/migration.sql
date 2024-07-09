@@ -1,11 +1,11 @@
 -- CreateTable
 CREATE TABLE `notes` (
-    `id` BIGINT NOT NULL AUTO_INCREMENT,
-    `title` TINYTEXT NULL,
-    `description` TEXT NULL,
-    `created_at` TIMESTAMP(0) NULL,
-    `color` TINYTEXT NULL,
-    `user` VARCHAR(50) NULL,
+    `id` VARCHAR(50) NOT NULL,
+    `title` TINYTEXT NOT NULL,
+    `content` TEXT NOT NULL,
+    `created_at` TIMESTAMP(0) NOT NULL,
+    `color` TINYTEXT NOT NULL,
+    `user` VARCHAR(50) NOT NULL,
 
     INDEX `fk_notes_users`(`user`),
     PRIMARY KEY (`id`)
@@ -14,8 +14,9 @@ CREATE TABLE `notes` (
 -- CreateTable
 CREATE TABLE `users` (
     `id` VARCHAR(50) NOT NULL,
-    `username` VARCHAR(100) NULL,
-    `created_at` TIMESTAMP(0) NULL DEFAULT (now()),
+    `username` VARCHAR(100) NOT NULL,
+    `created_at` TIMESTAMP(0) NOT NULL DEFAULT (now()),
+    `selected_color` TINYTEXT NOT NULL,
 
     UNIQUE INDEX `unq_users_username`(`username`),
     PRIMARY KEY (`id`)

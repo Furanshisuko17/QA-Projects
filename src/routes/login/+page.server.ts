@@ -12,7 +12,7 @@ export const actions: Actions = {
   default: async (event) => {
     const formData = await event.request.formData();
     const username = formData.get("username") as string;
-    console.log(username);
+    // console.log(username);
     if (
       typeof username !== "string" ||
       username.length < 3 ||
@@ -43,6 +43,7 @@ export const actions: Actions = {
         data: {
           id: userId,
           username: username,
+          selected_color: "slate",
           created_at: new Date()
         }
       });

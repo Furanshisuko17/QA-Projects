@@ -3,7 +3,7 @@
   import { Toaster, toast } from "svelte-sonner";
 </script>
 
-<Toaster richColors closeButton visibleToasts={6} />
+<Toaster richColors closeButton visibleToasts={6} position="bottom-left" />
 
 <main class="bg-slate-200 font-sans">
   <slot />

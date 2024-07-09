@@ -259,6 +259,57 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@floating-ui/core@npm:^1.3.1, @floating-ui/core@npm:^1.6.0":
+  version: 1.6.4
+  resolution: "@floating-ui/core@npm:1.6.4"
+  dependencies:
+    "@floating-ui/utils": "npm:^0.2.4"
+  checksum: 10c0/545684b6f76cda7579b6049bafb9903542d3f9c177300192fe83db19d99b1df285bc33aba3b8ec2978d021151c4168356876e8181002dd2ff4fb93d9e4b7bf71
+  languageName: node
+  linkType: hard
+
+"@floating-ui/dom@npm:^1.4.5":
+  version: 1.6.7
+  resolution: "@floating-ui/dom@npm:1.6.7"
+  dependencies:
+    "@floating-ui/core": "npm:^1.6.0"
+    "@floating-ui/utils": "npm:^0.2.4"
+  checksum: 10c0/5255f522534e0022b554c366b969fa26951677a1cf39ddd58614071a909a340c5e1ffe645501037b221808f01bfac4e7edba14728978ee7e2438e8432c1a163f
+  languageName: node
+  linkType: hard
+
+"@floating-ui/utils@npm:^0.2.4":
+  version: 0.2.4
+  resolution: "@floating-ui/utils@npm:0.2.4"
+  checksum: 10c0/154924b01157cb45cf305f4835d7f603e931dda8b00bbe52666729bccc5e7b99630e8b951333725e526d4e53d9b342976434ad5750b8b1da58728e3698bdcc2b
+  languageName: node
+  linkType: hard
+
+"@fortawesome/fontawesome-common-types@npm:6.5.2":
+  version: 6.5.2
+  resolution: "@fortawesome/fontawesome-common-types@npm:6.5.2"
+  checksum: 10c0/12104e93a0056ad1077f7350826f52aa26465bb1d6b4ce75dab0307072a3871301ec750c3a34d89d05e7338c9b446fa2793150cf58a5167217021943ef877d77
+  languageName: node
+  linkType: hard
+
+"@fortawesome/fontawesome-svg-core@npm:^6.5.2":
+  version: 6.5.2
+  resolution: "@fortawesome/fontawesome-svg-core@npm:6.5.2"
+  dependencies:
+    "@fortawesome/fontawesome-common-types": "npm:6.5.2"
+  checksum: 10c0/91695dd375623988d16e6f0dc69d20350ef3fa3296fe40aa08877aae7beaf64378134656a2227419fe648dcd27a81c03fe1fd9a6c87956d863164b0380ba77d0
+  languageName: node
+  linkType: hard
+
+"@fortawesome/free-solid-svg-icons@npm:^6.5.2":
+  version: 6.5.2
+  resolution: "@fortawesome/free-solid-svg-icons@npm:6.5.2"
+  dependencies:
+    "@fortawesome/fontawesome-common-types": "npm:6.5.2"
+  checksum: 10c0/af2778b91ba4bf7b61ae0cdf0d39d75b6906a82bfdf8e977881d987b86a32ce157297853b7892aa3b609076b5542ea1e1e78b520d57b6f50677a2a748cf3434c
+  languageName: node
+  linkType: hard
+
 "@humanwhocodes/config-array@npm:^0.11.14":
   version: 0.11.14
   resolution: "@humanwhocodes/config-array@npm:0.11.14"
@@ -281,6 +332,15 @@ __metadata:
   version: 2.0.3
   resolution: "@humanwhocodes/object-schema@npm:2.0.3"
   checksum: 10c0/80520eabbfc2d32fe195a93557cef50dfe8c8905de447f022675aaf66abc33ae54098f5ea78548d925aa671cd4ab7c7daa5ad704fe42358c9b5e7db60f80696c
+  languageName: node
+  linkType: hard
+
+"@internationalized/date@npm:^3.5.0, @internationalized/date@npm:^3.5.1":
+  version: 3.5.4
+  resolution: "@internationalized/date@npm:3.5.4"
+  dependencies:
+    "@swc/helpers": "npm:^0.5.0"
+  checksum: 10c0/4e1fe3e2ad1719390e9b859ee23e8b7e9315ddfc2a0fcf446d8954a5b41147a4bed025f9d9718e0d4a6f097407af87ac0bdea3879d23d2a84757dd5aa5b9edf8
   languageName: node
   linkType: hard
 
@@ -356,6 +416,51 @@ __metadata:
     "@prisma/client": ^4.2.0 || ^5.0.0
     lucia: 3.x
   checksum: 10c0/fc9778e129b9da84eceff7c052f5767231fd4a6bcc12f2fe2805fec6ac9dea4b0b4dcd42207e15cca9ffa49a83f7f39d2597eca2380503758b6d14af64ed4a98
+  languageName: node
+  linkType: hard
+
+"@melt-ui/pp@npm:^0.3.2":
+  version: 0.3.2
+  resolution: "@melt-ui/pp@npm:0.3.2"
+  dependencies:
+    estree-walker: "npm:^3.0.3"
+    magic-string: "npm:^0.30.5"
+  peerDependencies:
+    "@melt-ui/svelte": ">= 0.29.0"
+    svelte: ^3.55.0 || ^4.0.0 || ^5.0.0-next.1
+  checksum: 10c0/5cb315d1562b6b8ff637309cc9b310ef51fd09714bdce7c46e7e1924f8af14e841e2c8a751a7be5460049b99e219a9cb1194c9b89e4e6b01abd469b20cd01df7
+  languageName: node
+  linkType: hard
+
+"@melt-ui/svelte@npm:0.76.2":
+  version: 0.76.2
+  resolution: "@melt-ui/svelte@npm:0.76.2"
+  dependencies:
+    "@floating-ui/core": "npm:^1.3.1"
+    "@floating-ui/dom": "npm:^1.4.5"
+    "@internationalized/date": "npm:^3.5.0"
+    dequal: "npm:^2.0.3"
+    focus-trap: "npm:^7.5.2"
+    nanoid: "npm:^5.0.4"
+  peerDependencies:
+    svelte: ">=3 <5"
+  checksum: 10c0/6d7115bdee8175fc6cd80d85de0f99e5cc1f6ff74c1f2badde3c2ac35e06784f0859a16bbb37a78a631518e246c20fc4a3049bc8b9025638a321fc4ad23363d2
+  languageName: node
+  linkType: hard
+
+"@melt-ui/svelte@npm:^0.83.0":
+  version: 0.83.0
+  resolution: "@melt-ui/svelte@npm:0.83.0"
+  dependencies:
+    "@floating-ui/core": "npm:^1.3.1"
+    "@floating-ui/dom": "npm:^1.4.5"
+    "@internationalized/date": "npm:^3.5.0"
+    dequal: "npm:^2.0.3"
+    focus-trap: "npm:^7.5.2"
+    nanoid: "npm:^5.0.4"
+  peerDependencies:
+    svelte: ^3.0.0 || ^4.0.0 || ^5.0.0-next.118
+  checksum: 10c0/72755368af3192faf5ed7eca386b891f997cbd41eac9ccef412c91889906a5b5ff56cb7bc0f5e39478dfcb2268e4ff6aaba758fb5b2e19a8c818655b5c5a51b9
   languageName: node
   linkType: hard
 
@@ -968,6 +1073,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@swc/helpers@npm:^0.5.0":
+  version: 0.5.11
+  resolution: "@swc/helpers@npm:0.5.11"
+  dependencies:
+    tslib: "npm:^2.4.0"
+  checksum: 10c0/7d1987ee6b887277d373a9be8c445cd2259c3258c08b16908c06864121fd8eac8bb89b179c91b6c5395f38194a903b5772575947c7eb3ca23285152cb0f66caa
+  languageName: node
+  linkType: hard
+
 "@tybys/wasm-util@npm:^0.8.1":
   version: 0.8.3
   resolution: "@tybys/wasm-util@npm:0.8.3"
@@ -1386,6 +1500,19 @@ __metadata:
   version: 2.3.0
   resolution: "binary-extensions@npm:2.3.0"
   checksum: 10c0/75a59cafc10fb12a11d510e77110c6c7ae3f4ca22463d52487709ca7f18f69d886aa387557cc9864fbdb10153d0bdb4caacabf11541f55e89ed6e18d12ece2b5
+  languageName: node
+  linkType: hard
+
+"bits-ui@npm:^0.21.11":
+  version: 0.21.11
+  resolution: "bits-ui@npm:0.21.11"
+  dependencies:
+    "@internationalized/date": "npm:^3.5.1"
+    "@melt-ui/svelte": "npm:0.76.2"
+    nanoid: "npm:^5.0.5"
+  peerDependencies:
+    svelte: ^4.0.0 || ^5.0.0-next.118
+  checksum: 10c0/35164c7e3f37679cd3be7aec33293fc66f2ffb22e7ae77bba229503975f3f763c9ba988559a017240d51145e82c6862d7535c5d803e11c0d8df5e4974d8bbce9
   languageName: node
   linkType: hard
 
@@ -2173,6 +2300,15 @@ __metadata:
   version: 3.3.1
   resolution: "flatted@npm:3.3.1"
   checksum: 10c0/324166b125ee07d4ca9bcf3a5f98d915d5db4f39d711fba640a3178b959919aae1f7cfd8aabcfef5826ed8aa8a2aa14cc85b2d7d18ff638ddf4ae3df39573eaf
+  languageName: node
+  linkType: hard
+
+"focus-trap@npm:^7.5.2":
+  version: 7.5.4
+  resolution: "focus-trap@npm:7.5.4"
+  dependencies:
+    tabbable: "npm:^6.2.0"
+  checksum: 10c0/c09e12b957862b2608977ff90de782645f99c3555cc5d93977240c179befa8723b9b1183e93890b4ad9d364d52a1af36416e63a728522ecce656a447d9ddd945
   languageName: node
   linkType: hard
 
@@ -3041,6 +3177,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"nanoid@npm:^5.0.4, nanoid@npm:^5.0.5":
+  version: 5.0.7
+  resolution: "nanoid@npm:5.0.7"
+  bin:
+    nanoid: bin/nanoid.js
+  checksum: 10c0/a3fb1c157e3e35378f44e5a7130c70f80c9037f66c9a37285e5e3d8298e8405fcb2399baaa420980b0fe5fd9c2e4186a6a31c3526f21de03cf34c1b459871401
+  languageName: node
+  linkType: hard
+
 "natural-compare@npm:^1.4.0":
   version: 1.4.0
   resolution: "natural-compare@npm:1.4.0"
@@ -3595,7 +3740,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "qa-projects@workspace:."
   dependencies:
+    "@fortawesome/fontawesome-svg-core": "npm:^6.5.2"
+    "@fortawesome/free-solid-svg-icons": "npm:^6.5.2"
     "@lucia-auth/adapter-prisma": "npm:^4.0.1"
+    "@melt-ui/pp": "npm:^0.3.2"
+    "@melt-ui/svelte": "npm:^0.83.0"
     "@prisma/client": "npm:^5.16.1"
     "@sveltejs/adapter-auto": "npm:^3.2.2"
     "@sveltejs/kit": "npm:^2.5.18"
@@ -3604,6 +3753,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": "npm:^7.15.0"
     "@typescript-eslint/parser": "npm:^7.15.0"
     autoprefixer: "npm:^10.4.19"
+    bits-ui: "npm:^0.21.11"
     eslint: "npm:^8.57.0"
     eslint-config-prettier: "npm:^9.1.0"
     eslint-plugin-svelte: "npm:^2.41.0"
@@ -3615,6 +3765,7 @@ __metadata:
     prisma: "npm:^5.16.1"
     svelte: "npm:^4.2.18"
     svelte-check: "npm:^3.8.4"
+    svelte-fa: "npm:^4.0.2"
     svelte-sonner: "npm:^0.3.24"
     tailwind-merge: "npm:^2.3.0"
     tailwindcss: "npm:^3.4.4"
@@ -4115,6 +4266,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"svelte-fa@npm:^4.0.2":
+  version: 4.0.2
+  resolution: "svelte-fa@npm:4.0.2"
+  peerDependencies:
+    svelte: ^4.0.0
+  checksum: 10c0/f92286bdc47e6940c06659dfe220cc8e34cfd2c1c6e8d637f067ebe8df23fb1a0ef439245317f349759299e89d659221049b919af209fb58d11f5cf2b9614ab4
+  languageName: node
+  linkType: hard
+
 "svelte-hmr@npm:^0.16.0":
   version: 0.16.0
   resolution: "svelte-hmr@npm:0.16.0"
@@ -4198,6 +4358,13 @@ __metadata:
     magic-string: "npm:^0.30.4"
     periscopic: "npm:^3.1.0"
   checksum: 10c0/33cb321b59d0d29730f44054e442adcfdb6f6b51968c60e4027a2d2aa59cba2e2360aa42b4c61b0223350eacfe8dbeb3b724476d03fffb89a3c87021edbb1562
+  languageName: node
+  linkType: hard
+
+"tabbable@npm:^6.2.0":
+  version: 6.2.0
+  resolution: "tabbable@npm:6.2.0"
+  checksum: 10c0/ced8b38f05f2de62cd46836d77c2646c42b8c9713f5bd265daf0e78ff5ac73d3ba48a7ca45f348bafeef29b23da7187c72250742d37627883ef89cbd7fa76898
   languageName: node
   linkType: hard
 

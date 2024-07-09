@@ -10,8 +10,9 @@
   export let size: string = "text-[36px]";
   let className: string = "";
   export { className as class };
+  export let style = "";
 </script>
 
-<div class={twMerge("flex justify-center align-middle", className)}>
+<div class={twMerge("flex justify-center align-middle", className)} {style}>
   <span class="material-symbols-rounded {size}">{icon}</span>
 </div>

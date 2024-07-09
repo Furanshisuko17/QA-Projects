@@ -7,10 +7,9 @@ export const lucia = new Lucia(adapter, {
       secure: false
     }
   },
-
   getUserAttributes: async (user) => {
     return {
-      username: user.username
+      id: user.id
     };
   }
 });
@@ -24,7 +23,7 @@ declare module "lucia" {
 }
 
 interface DatabaseUserAttributes {
-  username: string;
+  id: string;
 }
 interface DatabaseSessionAttributes {
   logged_at: Date;

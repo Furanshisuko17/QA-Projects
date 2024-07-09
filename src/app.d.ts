@@ -12,5 +12,7 @@ declare global {
     // interface Platform {}
   }
 }
-
+// declare module "@fortawesome/pro-solid-svg-core/index.es" {
+//   export * from "@fortawesome/pro-solid-svg-core";
+// }
 export {};
