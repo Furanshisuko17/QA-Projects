@@ -43,7 +43,6 @@
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@lucia-auth/adapter-prisma": "^4.0.1",
     "@prisma/client": "^5.16.1",
-    "bits-ui": "^0.21.11",
     "lucia": "^3.2.0",
     "svelte-fa": "^4.0.2",
     "svelte-sonner": "^0.3.24",
