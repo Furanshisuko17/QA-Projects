@@ -1,6 +1,6 @@
 <script lang="ts">
   import { enhance } from "$app/forms";
-  import type { ActionData, PageData } from "./$types";
+  import type { ActionData } from "./$types";
 
   export let form: ActionData;
 </script>
@@ -18,7 +18,7 @@
   <div class="h-2/3">
     <form class="flex flex-col gap-4" use:enhance method="post">
       <label class="flex flex-col">
-        <span class="mb-1 text-sm font-medium text-gray-700">Nombre de usuario</span>
+        <span class="mb-1 text-sm font-medium text-gray-700">Username</span>
         <input
           type="text"
           name="username"
@@ -29,15 +29,15 @@
       {#if form?.error}
         <p class="-mt-3 text-sm font-semibold text-red-500">{form.error}</p>
         <ul class="-mt-3 w-64 list-outside list-disc pl-6 text-sm text-gray-900">
-          <li>Solo letras mayúsculas, minusculas y números.</li>
-          <li>No puede tener espacios.</li>
+          <li>Only uppercase letters, lowercase letters and numbers are allowed.</li>
+          <li>It cannot contain spaces.</li>
         </ul>
       {/if}
       <button
         type="submit"
         class="w-full rounded-md bg-slate-900 py-2 font-semibold text-white hover:bg-slate-800"
       >
-        Iniciar sesión
+        Log in
       </button>
     </form>
   </div>

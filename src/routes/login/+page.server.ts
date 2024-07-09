@@ -12,7 +12,6 @@ export const actions: Actions = {
   default: async (event) => {
     const formData = await event.request.formData();
     const username = formData.get("username") as string;
-    // console.log(username);
     if (
       typeof username !== "string" ||
       username.length < 3 ||
@@ -20,7 +19,7 @@ export const actions: Actions = {
       !/^[a-zA-Z0-9_-]+$/.test(username)
     ) {
       return fail(400, {
-        error: "Nombre de usuario inválido."
+        error: "Invalid username."
       });
     }
 

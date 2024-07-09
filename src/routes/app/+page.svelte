@@ -9,13 +9,11 @@
   import { changeBrightness, changeSaturation } from "$lib/util";
   import { selectedColor } from "$lib/stores";
   import { toast } from "svelte-sonner";
-  import { page } from "$app/stores";
   import { fade } from "svelte/transition";
   import { flip } from "svelte/animate";
+  import { cubicInOut } from "svelte/easing";
 
   let pageJustLoaded = true;
-
-  console.log($page.data);
 
   setTimeout(() => {
     pageJustLoaded = false;
@@ -24,8 +22,6 @@
   export let data: PageData;
 
   let user: User;
-
-  $: console.log(user);
 
   let topContainerHeight: number = 0;
   let bottomContainerHeight: number = 0;
@@ -82,9 +78,8 @@
       let data = await res.json();
       user.notes = [
         ...user.notes,
-        new Note(data.id, data.title, data.content, data.created_at, data.color)
+        new Note(data.id, data.title, data.content, new Date(data.created_at), data.color)
       ];
-      console.log("Create note: ");
     } else {
       toast.error("Failed to create note!");
     }
@@ -170,7 +165,7 @@
         </p>
       {:else}
         {#each user.notes as note (note.id)}
-          <div animate:flip={{ duration: 300 }}>
+          <div animate:flip={{ duration: 500, easing: cubicInOut }}>
             <NoteComponent bind:note deleteCallBack={deleteNote} />
           </div>
         {/each}

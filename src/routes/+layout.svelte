@@ -5,6 +5,6 @@
 
 <Toaster richColors closeButton visibleToasts={6} position="bottom-left" />
 
-<main class="bg-slate-200 font-sans">
+<main class="font-sans">
   <slot />
 </main>

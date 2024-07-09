@@ -1,7 +1,5 @@
 <script lang="ts">
   import { noteColors, type Note } from "$lib/models";
-  import { onMount } from "svelte";
-  import Icon from "./Icon.svelte";
   import { fade, fly } from "svelte/transition";
   import { createDropdownMenu, melt } from "@melt-ui/svelte";
   import { changeBrightness, changeSaturation } from "$lib/util";
@@ -16,7 +14,6 @@
   import { quadInOut } from "svelte/easing";
   import { toast } from "svelte-sonner";
   import { writable } from "svelte/store";
-  import { flip } from "svelte/animate";
 
   export let note: Note;
   export let deleteCallBack: (id: string) => void;
